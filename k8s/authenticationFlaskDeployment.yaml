@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authentication-flask-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: authentication-flask-deployment
+  template:
+    metadata:
+      labels:
+        app: authentication-flask-deployment
+    spec:
+      containers:
+      - name: authentication-flask
+        image: charankavali23/authentication-flask:latest
+        ports:
+        - containerPort: 5000
