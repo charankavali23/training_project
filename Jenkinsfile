@@ -25,7 +25,7 @@ pipeline {
                 script {
                     // Push Flask application image to Docker Hub
                     sh """
-                    docker tag charankavali23/authentication-flask:latest charankavali23/authentication_flask:${env.BUILD_ID}
+                    docker tag charankavali23/authentication-flask:latest charankavali23/authentication-flask:${env.BUILD_ID}
                     docker push charankavali23/authentication-flask:${env.BUILD_ID}
                     docker push charankavali23/authentication-flask:latest
                     """
