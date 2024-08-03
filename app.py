@@ -74,7 +74,7 @@ def register():
         elif not userName or not password or not email:
             message = 'Please fill out the form!'
         else:
-            cur.execute(f"INSERT INTO public.authentication_details (username, password, email) VALUES ('{userName}', crypt('{password}', gen_salt('bf')), '{email}');")
+            cur.execute(f"INSERT INTO public.authentication_details (name, password, email) VALUES ('{userName}', crypt('{password}', gen_salt('bf')), '{email}');")
             conn.commit()
             message = 'You have successfully registered!'
         cur.close()
